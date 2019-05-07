@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+          <thead>
+            <tr>
+              <td>Film</td>
+              <td>Date</td>
+              <td>Entrees</td>
+              <td>Details</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let movie of listMovie, let i = index" [ngClass]="{'bg-laura': movie.entree > 1000000}">
+                <td>{{ movie.titre }}</td>
+                <td>{{ movie.date }}</td>
+                <td>{{ movie.entree }}</td>
+                <td><button class="btn btn-info" [routerLink]="['/detail',i]" routerLinkActive="router-link-active" >Details</button></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
